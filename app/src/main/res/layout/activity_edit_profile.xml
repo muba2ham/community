@@ -1,0 +1,524 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="loginViewModel"
+            type="community.io.com.viewmodel.EditProfileViewModel" />
+
+        <variable
+            name="imageUrl"
+            type="String" />
+
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bgscreen"
+        android:orientation="vertical">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/rvToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/appToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/light"
+                android:elevation="@dimen/_15sdp"
+                android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                android:textAlignment="center"
+                app:contentInsetStart="0dp"
+                app:layout_collapseMode="pin"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+
+                    <TextView
+                        android:id="@+id/tvToolbarTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:maxLines="1"
+                        android:maxEms="15"
+                        android:text="My Profile"
+                        android:textAlignment="center"
+                        android:textColor="@color/dark"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="bold"
+                        android:visibility="visible" />
+
+
+                    <ImageView
+                        android:id="@+id/ivToolbarBack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center_vertical"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:background="@drawable/baseline_arrow_back_24"
+                        />
+
+                </FrameLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="@string/app_name"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_25ssp" />
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/B"
+                            android:layout_width="@dimen/_40sdp"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_margin="@dimen/_7sdp"
+                            app:profileImage="@{loginViewModel.lastImage}" />
+
+                        <!--                    app:profileImage="@{imageUrl}"-->
+
+                        <!--                    app:image ="@{loginViewModel.userPicture}"-->
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/baseline_camera_alt_24"
+                            android:drawablePadding="@dimen/_5sdp"
+                            android:drawableTint="@color/light"
+                            android:text="Select Profile Image"
+                            android:alpha="0.7"
+                            android:onClick="@{()-> loginViewModel.onImageClicked()}"
+                            android:padding="@dimen/_5sdp"
+                            android:textColor="@color/light" />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:orientation="horizontal">
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_4sdp"
+                        android:layout_weight="1"
+                        app:error="@{loginViewModel.errorFirstName}"
+                        app:errorEnabled="true"
+                        app:expandedHintEnabled="false"
+                        app:hintAnimationEnabled="false"
+                        app:hintEnabled="false">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/inputFirstName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:alpha="0.6"
+                            android:background="@android:color/transparent"
+                            android:gravity="center"
+                            android:text="@{loginViewModel.userData.name}"
+
+                            android:hint="First Name*"
+                            android:inputType="textEmailAddress"
+                            android:onTextChanged="@{(text, start, before, count) -> loginViewModel.onLastNameTextChanged(text)}"
+                            android:padding="8dp"
+                            android:textColor="@color/light"
+                            android:textColorHint="@color/light" />
+
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_4sdp"
+                        android:layout_weight="1"
+                        android:clipChildren="false"
+                        app:error="@{loginViewModel.errorLastName}"
+                        app:errorEnabled="true"
+                        app:expandedHintEnabled="false"
+                        app:hintAnimationEnabled="false"
+                        app:hintEnabled="false">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/inputLastName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:alpha="0.6"
+                            android:background="@android:color/transparent"
+                            android:gravity="center"
+                            android:text="@{loginViewModel.userData.last_name}"
+                            android:hint="Last Name*"
+                            android:inputType="textPassword"
+                            android:onTextChanged="@{(text, start, before, count) -> loginViewModel.onFirstNameTextChanged(text)}"
+                            android:padding="8dp"
+                            android:textColor="@color/light"
+                            android:textColorHint="@color/light" />
+                        <!--                android:theme="@style/MyEditTextTheme"-->
+                        <!--                android:text="@={loginViewModel.password}"-->
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    app:error="@{loginViewModel.errorEmail}"
+                    app:errorEnabled="true"
+                    app:expandedHintEnabled="false"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputFatherName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:alpha="0.6"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:text="@{loginViewModel.fatherName}"
+
+                        android:hint="Father Name(optional)"
+                        android:inputType="text"
+                        android:onTextChanged="@{(text, start, before, count) -> loginViewModel.onFatherNameTextChanged(text)}"
+                        android:padding="8dp"
+                        android:textColor="@color/light"
+                        android:textColorHint="@color/light" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    app:error="@{loginViewModel.errorEmail}"
+                    app:errorEnabled="true"
+                    app:expandedHintEnabled="false"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputFamilyName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:alpha="0.6"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:text="@{loginViewModel.familyName}"
+
+                        android:hint="Family Name (optional)"
+                        android:inputType="text"
+                        android:onTextChanged="@{(text, start, before, count) -> loginViewModel.onFamilyNameTextChanged(text)}"
+                        android:padding="8dp"
+                        android:textColor="@color/light"
+                        android:textColorHint="@color/light" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    app:errorEnabled="true"
+                    app:expandedHintEnabled="false"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputMartialStatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:alpha="0.6"
+                        android:clickable="true"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:onClick="@{()-> loginViewModel.onMartialStatusClicked()}"
+
+                        android:text="@{loginViewModel.martialStatus}"
+
+
+                        android:background="@android:color/transparent"
+                        android:drawableRight="@drawable/baseline_arrow_drop_down_24"
+                        android:gravity="center"
+                        android:hint="Martial Status (optional)"
+                        android:inputType="text"
+                        android:padding="8dp"
+                        android:textColor="@color/light"
+                        android:textColorHint="@color/light" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    app:error="@{loginViewModel.errorEmail}"
+                    app:errorEnabled="true"
+                    app:expandedHintEnabled="false"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputNumberChildren"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:alpha="0.6"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:text="@{loginViewModel.userData.no_of_children}"
+
+                        android:hint="Number of Chidren (optional)"
+                        android:inputType="text"
+                        android:onTextChanged="@{(text, start, before, count) -> loginViewModel.onNumberOfChildrenTextChanged(text)}"
+                        android:padding="8dp"
+                        android:textColor="@color/light"
+                        android:textColorHint="@color/light" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        app:error="@{loginViewModel.errorEmail}"
+                        app:errorEnabled="true"
+                        app:expandedHintEnabled="false"
+                        app:hintAnimationEnabled="false"
+                        app:hintEnabled="false">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/inputProfesion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:alpha="0.6"
+                            android:background="@android:color/transparent"
+                            android:gravity="center"
+                            android:text="@{loginViewModel.userData.profession}"
+
+                            android:hint="Your Profession (optional)"
+                            android:inputType="text"
+                            android:onTextChanged="@{(text, start, before, count) -> loginViewModel.onYourProfessionTextChanged(text)}"
+                            android:padding="8dp"
+                            android:textColor="@color/light"
+                            android:textColorHint="@color/light" />
+
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    app:errorEnabled="true"
+                    app:expandedHintEnabled="false"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputCity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:alpha="0.6"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:text="@{loginViewModel.userData.city}"
+
+                        android:hint="City (optional)"
+                        android:inputType="text"
+                        android:onTextChanged="@{(text, start, before, count) -> loginViewModel.onCityTextChanged(text)}"
+                        android:padding="8dp"
+                        android:textColor="@color/light"
+                        android:textColorHint="@color/light" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    app:errorEnabled="true"
+                    app:expandedHintEnabled="false"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputState"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:onClick="@{()-> loginViewModel.onStateClicked()}"
+                        android:alpha="0.6"
+                        android:background="@android:color/transparent"
+                        android:drawableRight="@drawable/baseline_arrow_drop_down_24"
+                        android:gravity="center"
+                        android:text="@{loginViewModel.state}"
+                        android:hint="State (optional)"
+                        android:inputType="text"
+                        android:padding="8dp"
+                        android:textColor="@color/light"
+                        android:textColorHint="@color/light" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    app:error="@{loginViewModel.errorMobile}"
+
+                    app:errorEnabled="true"
+                    app:expandedHintEnabled="false"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputMobile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:alpha="0.6"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:text="@{loginViewModel.userData.mobile}"
+
+                        android:hint="Mobile*"
+                        android:inputType="textEmailAddress"
+                        android:onTextChanged="@{(text, start, before, count) -> loginViewModel.onMobileTextChanged(text)}"
+                        android:padding="8dp"
+                        android:textColor="@color/light"
+                        android:textColorHint="@color/light"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    app:error="@{loginViewModel.errorEmail}"
+                    app:errorEnabled="true"
+                    app:expandedHintEnabled="false"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:alpha="0.6"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:text="@{loginViewModel.userData.email}"
+
+                        android:hint="Email*"
+                        android:inputType="textEmailAddress"
+                        android:onTextChanged="@{(text, start, before, count) -> loginViewModel.onEmailTextChanged(text)}"
+                        android:padding="8dp"
+                        android:textColor="@color/light"
+                        android:textColorHint="@color/light"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_25sdp"
+                    android:alpha="0.8"
+                    android:backgroundTint="@color/danger"
+                    android:enabled="@{loginViewModel.isRegisteredButtonEnabled}"
+                    android:onClick="@{()-> loginViewModel.onRegisteredClicked()}"
+                    android:padding="@dimen/_10sdp"
+                    android:text="Update"
+                    android:textAllCaps="false"
+                    android:textColor="@color/light"
+                    android:textSize="@dimen/_15ssp"
+                    app:cornerRadius="@dimen/_35sdp" />
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+
+
+    </LinearLayout>
+</layout>

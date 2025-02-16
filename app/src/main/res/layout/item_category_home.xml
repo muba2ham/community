@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+
+        <variable
+            name="model"
+            type="community.io.com.data.model.AdvlModel" />
+
+        <!--        <variable-->
+        <!--            name="loginViewModel"-->
+        <!--            type="community.io.com.viewmodel.RegisterViewModel" />-->
+
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_4sdp"
+        android:background="@color/light"
+         android:orientation="horizontal">
+
+
+<!--        android:alpha="0.6"-->
+<!--        android:background="@android:color/darker_gray"-->
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/B"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_margin="@dimen/_7sdp"
+                app:profileImage1="@{model.image}" />
+
+            <TextView
+                android:id="@+id/tvCategoryName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:maxEms="9"
+                android:padding="@dimen/_5sdp"
+                android:textColor="@color/dark"
+                android:textSize="@dimen/_12sdp"
+
+                android:visibility="visible" />
+
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</layout>

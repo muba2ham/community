@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+
+        <variable
+            name="model"
+            type="community.io.com.data.model.Directory" />
+
+        <!--        <variable-->
+        <!--            name="loginViewModel"-->
+        <!--            type="community.io.com.viewmodel.RegisterViewModel" />-->
+
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxEms="15"
+                    android:maxLines="1"
+                    android:text="Name : "
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/_12sdp"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxEms="15"
+                    android:maxLines="1"
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/_12sdp"
+
+                    android:visibility="visible" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxEms="15"
+                    android:maxLines="1"
+                    android:text="Father Name : "
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/_12sdp"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/tvFatherName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxEms="15"
+                    android:maxLines="1"
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/_12sdp"
+
+                    android:visibility="visible" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxEms="15"
+                    android:maxLines="1"
+                    android:text="Family Name : "
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/_12sdp"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/tvFamilyName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxEms="15"
+                    android:maxLines="1"
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/_12sdp"
+
+                    android:visibility="visible" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxEms="15"
+                    android:maxLines="1"
+                    android:text="Merital Status : "
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/_12sdp"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/tvMaritalStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxEms="15"
+                    android:maxLines="1"
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/_12sdp"
+
+                    android:visibility="visible" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxEms="15"
+                    android:maxLines="1"
+                    android:text="No. of children : "
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/_12sdp"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/tvNoofChild"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxEms="15"
+                    android:maxLines="1"
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/_12sdp"
+
+                    android:visibility="visible" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxEms="15"
+                    android:maxLines="1"
+                    android:text="Profession : "
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/_12sdp"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/tvProfession"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxEms="15"
+                    android:maxLines="1"
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/_12sdp"
+
+                    android:visibility="visible" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxEms="15"
+                    android:maxLines="1"
+                    android:text="Address : "
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/_12sdp"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/tvAddresh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxEms="15"
+                    android:maxLines="1"
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/_12sdp"
+
+                    android:visibility="visible" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxEms="15"
+                    android:maxLines="1"
+                    android:text="Mobile : "
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/_12sdp"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/tvMobile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+
+                    android:drawableRight="@android:drawable/ic_dialog_email"
+                    android:drawableTint="@color/primary"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:maxEms="15"
+                    android:maxLines="1"
+                    android:textColor="@color/primary"
+
+                    android:textSize="@dimen/_12sdp"
+
+                    android:visibility="visible" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxEms="15"
+                    android:maxLines="1"
+                    android:text="Email : "
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/_12sdp"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/tvEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:drawableRight="@android:drawable/ic_dialog_email"
+                    android:drawableTint="@color/primary"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:maxEms="15"
+                    android:maxLines="1"
+                    android:textColor="@color/primary"
+                    android:textSize="@dimen/_12sdp"
+
+                    android:visibility="visible" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/B"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_margin="@dimen/_7sdp"
+                app:profileImage="@{model.profile_pic}" />
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

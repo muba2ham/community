@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<!--    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />-->
+<!--    <uses-permission android:name="android.permission.INTERNET" />-->
+<!--    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>-->
+
+
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+
+
+    <application
+        android:name=".singleton.App"
+        android:allowBackup="true"
+        android:usesCleartextTraffic="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Community"
+        tools:targetApi="31"
+        android:grantUriPermissions="true"
+        android:requestLegacyExternalStorage="true"
+        >
+        <activity
+            android:name=".ui.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+
+
+        <activity android:name=".ui.LoginActivity"/>
+
+        <activity android:name=".ui.RegisterActivity" />
+
+        <activity android:name=".ui.ForgotPasswordActivity" />
+
+
+        <activity android:name=".ui.HomeActivity" />
+
+        <activity android:name=".ui.EditProfileActivity" />
+
+
+        <activity android:name=".ui.NotificationActivity" />
+
+
+        <activity android:name=".ui.EventActivity" />
+
+        <activity android:name=".ui.HaninaDirectoryActivity"/>
+
+        <activity android:name=".ui.ChangePasswordActivity"/>
+
+        <activity android:name=".ui.AdminContactActivity"/>
+
+        <activity android:name=".ui.BlogsListActivity"/>
+
+        <activity android:name=".ui.CreateBlogActivity" />
+
+
+        <activity android:name=".ui.AdvtListActivity"/>
+
+        <activity android:name=".ui.AdvertisementListActivity"/>
+
+        <activity android:name=".ui.AdvertisementDetailActivity"/>
+
+        <activity android:name=".ui.CreateAdvertisement"/>
+
+<activity android:name=".ui.AboutUsActivity"/>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/path" />
+        </provider>
+
+
+
+
+
+    </application>
+
+</manifest>

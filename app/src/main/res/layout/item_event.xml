@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+
+<!--        <variable-->
+<!--            name="model"-->
+<!--            type="community.io.com.data.model.Locations" />-->
+
+        <!--        <variable-->
+        <!--            name="loginViewModel"-->
+        <!--            type="community.io.com.viewmodel.RegisterViewModel" />-->
+
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        android:padding="@dimen/_5sdp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:maxEms="15"
+            android:maxLines="1"
+            android:text="Schedule Event"
+            android:textColor="@color/dark"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvDescriptions"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:alpha="0.7"
+            android:text='model'
+            android:textColor="@color/black" />
+
+        <!--        android:text='@{String.format("%s %s",'Message: , model.message)}'-->
+
+        <ImageView
+            android:id="@+id/B"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:backgroundTint="@color/teal_200"
+            android:background="@drawable/baseline_visibility_24"
+            />
+
+
+    </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.9"
+            android:text='model'
+            android:textColor="@color/black" />
+
+        <!--        android:text="Sent On: @{model.martialStatus}"-->
+
+
+    </LinearLayout>
+
+</layout>

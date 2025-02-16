@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="drawer_menu_item">
+        <item>View / Create Events</item>
+        <item>Beit Hanina Directory</item>
+        <item>Information</item>
+        <item>Hanini Business Classifiends</item>
+        <item>Blogs</item>
+        <item>Admin Contact Us</item>
+        <item>Edit Profile</item>
+        <item>Change Password</item>
+        <item>About Us</item>
+
+    </string-array>
+
+
+</resources>

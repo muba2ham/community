@@ -1,0 +1,57 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+<!--    <style name="Theme.community" parent="Theme.MaterialComponents.DayNight.DarkActionBar">-->
+    <style name="Theme.Community" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_200</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+
+        <item name="textInputStyle">@style/TextInputLayoutStyle</item>
+
+    </style>
+
+    <style name="MyEditTextTheme">
+        <item name="colorControlNormal">@color/red</item>
+        <item name="colorControlActivated">@color/teal_700</item>
+        <item name="colorControlHighlight">@color/black</item>
+    </style>
+
+
+
+<!--    <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">-->
+<!--        <item name="boxStrokeColor">@color/box_stroke_color</item>-->
+<!--        <item name="boxStrokeWidth">1sp</item>-->
+<!--        <item name="boxBackgroundColor">@color/white</item>-->
+<!--    </style>-->
+
+<!--    <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">-->
+    <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="colorControlHighlight">@color/teal_700</item>
+        <item name="colorControlActivated">@color/black</item>
+
+        <!--        <item name="fontFamily">@font/whitneymedium</item>-->
+        <item name="boxBackgroundColor">@color/white</item>
+<!--        <item name="boxBackgroundColor">@android:color/transparent</item>-->
+<!--        <item name="endIconMode">clear_text</item>-->
+        <item name="boxStrokeColor">@color/red</item>
+
+        <item name="boxStrokeErrorColor">@color/red</item>
+    </style>
+
+    <style name="CustomBottomSheetDailog" parent="Theme.MaterialComponents.Light.BottomSheetDialog">
+        <item name="behavior_draggable">false</item>
+        <!--        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>-->
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+
+</resources>

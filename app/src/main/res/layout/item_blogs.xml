@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+
+        <variable
+            name="model"
+            type="community.io.com.data.model.BlogsModel" />
+
+
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/viewDiv"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_height="0.5dip"
+            android:background="@color/dark" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <View
+            android:layout_width="0.5dip"
+            android:layout_height="match_parent"
+            android:background="@color/dark" />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_margin="@dimen/_5sdp"
+        android:padding="@dimen/_10sdp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:maxEms="15"
+                android:maxLines="1"
+                android:text="Post by : "
+                android:textColor="@color/dark"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text='@{String.format("%s %s",model.name , model.last_name)}'
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:visibility="visible" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text='@{model.post_title}'
+            android:layout_marginTop="@dimen/_7sdp"
+            android:textColor="@color/dark"
+            android:textSize="@dimen/_11sdp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:text='@{model.post_description}'
+            android:textColor="@color/dark"
+            android:textSize="@dimen/_10sdp"
+            android:visibility="visible" />
+
+        <ImageView
+                android:id="@+id/B"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_7sdp"
+                app:profileImage1="@{model.image}" />
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv_blogs_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:nestedScrollingEnabled="false"
+            />
+
+    </LinearLayout>
+
+        <View
+            android:layout_width="0.5dip"
+            android:layout_height="match_parent"
+            android:background="@color/dark" />
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/button_border"
+            >
+
+            <EditText
+                android:id="@+id/etCooment"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@null"
+                android:layout_weight="1"
+                android:alpha="0.5"
+                android:hint="Post you comment.."
+                android:minLines="2"
+                 android:inputType="textMultiLine"
+                android:paddingLeft="16.0dip"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textCursorDrawable="@null"/>
+
+            <ImageView
+                android:id="@+id/attachDocuments"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:src="@drawable/baseline_attach_file_24"
+                android:alpha="0.5"
+                android:padding="@dimen/_5sdp"
+                />
+
+
+
+            <LinearLayout
+                android:id="@+id/sendComment"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal"
+                android:background="@color/primary"
+                android:gravity="center"
+
+                >
+
+                               <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/baseline_chevron_right_24"
+                   android:layout_margin="@dimen/_5sdp"
+                    android:padding="@dimen/_5sdp"/>
+<!--                android:background="@drawable/ic_baseline_dehaze_24"-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/saveButton"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:background="@color/primary"-->
+<!--                android:padding="@dimen/_5sdp"-->
+<!--                android:gravity="center"-->
+<!--                android:text="Save"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="16sp"-->
+<!--                android:textStyle="bold"/>-->
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

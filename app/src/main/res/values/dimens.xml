@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="material_input_text_to_prefix_suffix_padding">@dimen/_15sdp</dimen>
+</resources>

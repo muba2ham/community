@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+
+        <variable
+            name="model"
+            type="community.io.com.data.model.DataModel" />
+
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/llMenu"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@android:color/transparent">
+
+
+        <ImageView
+            android:id="@+id/menuImage"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_margin="@dimen/_7sdp"
+            android:scaleType="fitXY"
+            android:backgroundTint="@color/white"
+            app:tint="@color/white" />
+<!--        app:profileImage="@{model.profile_pic}"-->
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:maxEms="9"
+            android:text="Wh : "
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp"
+            android:visibility="visible" />
+
+
+    </LinearLayout>
+
+</layout>

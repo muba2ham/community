@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+
+        <variable
+            name="model"
+            type="community.io.com.data.model.NotificationsModel" />
+
+
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+
+        >
+
+<!--        android:background="@color/light"-->
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text='@{String.format("%s %s","Message:" , model.message)}'
+            android:alpha="0.7"
+            android:textColor="@color/black" />
+
+<!--        android:text='@{model.message}'-->
+<!--        android:text='@{String.format("%s %s",'Message: , model.message)}'-->
+
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text='@{String.format("%s %s","Sent On:" , model.created_on)}'
+
+            android:alpha="0.7"
+            android:textColor="@color/black" />
+
+<!--        android:text="Sent On: @{model.martialStatus}"-->
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dip"
+            android:alpha="0.3"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@color/dark" />
+
+
+    </LinearLayout>
+
+</layout>

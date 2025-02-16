@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="loginViewModel"
+            type="community.io.com.viewmodel.AdvertisementDetailViewModel" />
+
+        <variable
+            name="imageUrl"
+            type="String" />
+
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/rvToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/appToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/light"
+                android:elevation="@dimen/_15sdp"
+                android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                android:textAlignment="center"
+                app:contentInsetStart="0dp"
+                app:layout_collapseMode="pin"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+
+                    <TextView
+                        android:id="@+id/tvToolbarTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:maxLines="1"
+                        android:maxEms="15"
+                        android:text="Advertisement List"
+                        android:textAlignment="center"
+                        android:textColor="@color/dark"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="bold"
+                        android:visibility="visible" />
+
+
+                    <ImageView
+                        android:id="@+id/ivToolbarBack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center_vertical"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:background="@drawable/baseline_arrow_back_24"
+                        />
+
+                </FrameLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:alpha="0.1"
+            android:background="@color/dark" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_10sdp"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/B"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_7sdp"
+                />
+<!--            app:profileImage1="@{model.feature_photo}"-->
+
+
+
+            <TextView
+                android:id="@+id/tvPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:textColor="@color/secondary"
+                android:text="@{loginViewModel.advertisementDetail.price}"
+                android:textSize="@dimen/_11sdp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text='@{String.format("%s %s %s %s", loginViewModel.advertisementDetail.title  , "(" , loginViewModel.advertisementDetail.categoryname, ")")}'
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@color/dark"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+
+
+            <TextView
+                android:id="@+id/tvDescriptionTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text='@{String.format("%s %s","Description: " , loginViewModel.advertisementDetail.description)}'
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@color/dark"
+                android:textSize="@dimen/_11sdp"
+
+                android:visibility="visible" />
+
+
+
+            <TextView
+                android:id="@+id/tvOfferedBy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text='@{String.format("%s %s %s","Offered by: " , loginViewModel.advertisementDetail.name, loginViewModel.advertisementDetail.last_name)}'
+                android:textColor="@color/dark"
+                android:textSize="@dimen/_11sdp"
+                android:visibility="visible" />
+
+
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/baseline_schedule_24"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:drawablePadding="@dimen/_5sdp"
+                android:text='@{ loginViewModel.advertisementDetail.created_on}'
+
+                android:textColor="@color/purple_500"
+                android:textSize="@dimen/_11sdp"
+                android:visibility="visible" />
+
+
+            <TextView
+                android:id="@+id/tvDeals"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@color/dark"
+                android:textSize="@dimen/_11sdp"
+
+                android:text='@{String.format("%s %s","Deals: " , loginViewModel.advertisementDetail.deals)}'
+
+                android:visibility="visible" />
+
+
+            <TextView
+                android:id="@+id/tvAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:textColor="@color/dark"
+                android:textSize="@dimen/_11sdp"
+                android:text='@{String.format("%s %s","Address: " , loginViewModel.advertisementDetail.address)}'
+                android:visibility="visible" />
+
+
+            <TextView
+                android:id="@+id/tvWebSite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:textColor="@color/dark"
+                android:textSize="@dimen/_10sdp"
+                android:text='@{String.format("%s %s","Website: " , loginViewModel.advertisementDetail.website)}'
+                android:visibility="visible" />
+
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@color/dark"
+                android:text="Contact with"
+                android:textSize="@dimen/_11sdp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+
+                android:drawableLeft="@drawable/baseline_local_phone_24"
+                android:drawablePadding="@dimen/_10sdp"
+                android:drawableTint="@color/light"
+                android:onClick="@{()-> loginViewModel.onMobileClicked(loginViewModel.advertisementDetail.contact_number)}"
+                android:backgroundTint="@color/colorcalender"
+                android:padding="@dimen/_5sdp"
+                android:text='@{loginViewModel.advertisementDetail.contact_number}'
+                android:textAllCaps="false"
+                android:textColor="@color/light"
+                android:textSize="@dimen/_12ssp"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:drawableLeft="@drawable/baseline_email_24"
+                android:drawablePadding="@dimen/_10sdp"
+                android:drawableTint="@color/light"
+                android:onClick="@{()-> loginViewModel.onEmailClicked(loginViewModel.advertisementDetail.email)}"
+                android:backgroundTint="@color/purple_500"
+                android:padding="@dimen/_5sdp"
+                android:text='@{loginViewModel.advertisementDetail.email}'
+                android:textAllCaps="false"
+                android:textColor="@color/light"
+                android:textSize="@dimen/_12ssp"
+                />
+
+
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

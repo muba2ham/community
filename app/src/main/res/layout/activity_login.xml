@@ -1,0 +1,216 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="loginViewModel"
+            type="community.io.com.viewmodel.LoginViewModel" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bgscreen"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="@string/app_name"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_25ssp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    app:error="@{loginViewModel.errorEmail}"
+                    app:errorEnabled="true"
+                    app:expandedHintEnabled="false"
+
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false"
+                    app:prefixText="E"
+                    app:prefixTextColor="@color/white">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:alpha="0.6"
+                        android:background="@android:color/transparent"
+                        android:hint="Email*"
+                        android:inputType="textEmailAddress"
+                        android:onTextChanged="@{(text, start, before, count) -> loginViewModel.onEmailTextChanged(text)}"
+                        android:padding="8dp"
+                        android:textColor="@color/light"
+                        android:textColorHint="@color/light"
+
+                        />
+
+                    <!--                android:theme="@style/MyEditTextTheme"-->
+                    <!--                android:text="@={loginViewModel.email}"-->
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:error="@{loginViewModel.errorPassword}"
+                    app:errorEnabled="true"
+                    app:expandedHintEnabled="false"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false"
+                    app:prefixText="P"
+                    app:prefixTextColor="@color/white">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:alpha="0.6"
+                        android:background="@android:color/transparent"
+
+                        android:hint="Password*"
+                        android:inputType="textPassword"
+                        android:onTextChanged="@{(text, start, before, count) -> loginViewModel.onPasswordTextChanged(text)}"
+                        android:padding="8dp"
+                        android:textColor="@color/light"
+                        android:textColorHint="@color/light" />
+                    <!--                android:theme="@style/MyEditTextTheme"-->
+                    <!--                android:text="@={loginViewModel.password}"-->
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:alpha="0.8"
+                    android:backgroundTint="@color/danger"
+                    android:enabled="@{loginViewModel.isLoginButtonEnabled}"
+                    android:onClick="@{()-> loginViewModel.onLoginClicked()}"
+                    android:padding="@dimen/_10sdp"
+                    android:text="Sign In"
+                    android:textAllCaps="false"
+                    android:textColor="@color/light"
+                    android:textSize="@dimen/_15ssp"
+                    app:cornerRadius="@dimen/_35sdp" />
+
+
+                <!--            <ProgressBar-->
+                <!--                android:id="@+id/progressBar"-->
+                <!--                style="?android:attr/progressBarStyleLarge"-->
+                <!--                android:layout_width="wrap_content"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:layout_gravity="center_horizontal"-->
+                <!--                android:layout_marginTop="8dp"-->
+                <!--                android:visibility="@{loginViewModel.busy}" />-->
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+
+                    android:layout_weight="1" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="bottom"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:alpha="0.7"
+                        android:background="@color/light" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:alpha="0.5"
+                            android:onClick="@{()-> loginViewModel.onForgotClicked()}"
+                            android:padding="@dimen/_5sdp"
+                            android:text="Forgot Password ?"
+                            android:textAlignment="center"
+                            android:textColor="@color/light"
+                            android:textSize="@dimen/_12ssp"
+                            android:textStyle="bold" />
+
+                        <!--                        <com.google.android.material.button.MaterialButton-->
+                        <!--                            android:layout_width="match_parent"-->
+                        <!--                            android:layout_height="wrap_content"-->
+                        <!--                            android:layout_marginTop="@dimen/_5sdp"-->
+                        <!--                            android:onClick="@{()-> loginViewModel.onLoginClicked()}"-->
+                        <!--                            android:padding="@dimen/_10sdp"-->
+                        <!--                            android:text="Sign In"-->
+                        <!--                            android:textAllCaps="false"-->
+                        <!--                            android:textColor="@color/light"-->
+                        <!--                            android:textSize="@dimen/_15ssp"-->
+                        <!--                            app:cornerRadius="@dimen/_35sdp" />-->
+
+                        <View
+                            android:layout_width="@dimen/_1sdp"
+                            android:layout_height="match_parent"
+                            android:alpha="0.7"
+                            android:layout_marginLeft="@dimen/_2sdp"
+                            android:background="@color/light" />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="@{()-> loginViewModel.onRegisterClicked()}"
+                            android:padding="@dimen/_5sdp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawableRight="@drawable/baseline_arrow_right_24"
+                                android:gravity="center"
+                                android:text="Register"
+                                android:textAlignment="center"
+                                android:textAllCaps="true"
+                                android:textColor="@color/primary"
+                                android:textSize="@dimen/_12ssp"
+                                android:textStyle="bold" />
+                            <!--                        android:drawableRight="@drawable/baseline_arrow_right_24"-->
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+</layout>

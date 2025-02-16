@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="loginViewModel"
+            type="community.io.com.viewmodel.EventViewModel" />
+
+    </data>
+
+
+<LinearLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rvToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/appToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            android:elevation="@dimen/_15sdp"
+            android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            android:textAlignment="center"
+            app:contentInsetStart="0dp"
+            app:layout_collapseMode="pin"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+
+                <TextView
+                    android:id="@+id/tvToolbarTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:maxLines="1"
+                    android:maxEms="15"
+                    android:text="Event Schedule"
+                    android:textAlignment="center"
+                    android:textColor="@color/dark"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+
+
+                <ImageView
+                    android:id="@+id/ivToolbarBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center_vertical"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:background="@drawable/baseline_arrow_back_24"
+                    />
+
+            </FrameLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_15sdp"
+        android:backgroundTint="@color/primary"
+         android:onClick="@{()-> loginViewModel.onAddNewEventsClicked()}"
+        android:padding="@dimen/_5sdp"
+        android:text="Add New Event"
+        android:textAllCaps="false"
+        android:textColor="@color/light"
+        android:textSize="@dimen/_15ssp"
+        app:cornerRadius="@dimen/_35sdp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@color/light"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:orientation="horizontal">
+            <TextView
+                 android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="5dp"
+                android:maxLines="1"
+                android:maxEms="15"
+                android:text="@{loginViewModel.currentMonthName}"
+                android:textAlignment="center"
+                android:textColor="@color/dark"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="5dp"
+                android:maxLines="1"
+                android:maxEms="15"
+                android:text="Today"
+                android:textAlignment="center"
+                android:alpha="0.7"
+                android:textColor="@color/dark"
+                android:textSize="@dimen/_11sdp"
+                android:visibility="visible" />
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                 android:gravity="center|end"
+                 android:layout_weight="1"
+                android:maxLines="1"
+                android:maxEms="15"
+                android:padding="5dp"
+                android:onClick="@{()-> loginViewModel.onLoadEventsClicked()}"
+
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Load Events"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/primary"
+                android:textSize="@dimen/_12sdp"
+                android:visibility="visible" />
+
+
+
+
+
+        </LinearLayout>
+
+
+    <!--    <com.prolificinteractive.materialcalendarview.MaterialCalendarView-->
+<!--        android:id="@+id/calendarView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:mcv_showOtherDates="all"-->
+<!--        app:mcv_selectionColor="#00F"-->
+<!--        />-->
+
+    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:mcv_calendarMode="month"
+        android:background="@color/light"
+        app:mcv_showOtherDates="all"
+        app:mcv_selectionColor="@color/secondary"
+        app:mcv_showWeekDays="true"
+
+        app:mcv_tileHeight="@dimen/_30sdp"
+        app:mcv_dateTextAppearance="@style/WeekDayTextCustomTextStyleCalender"
+          />
+<!--        app:mcv_tileSize="@dimen/_40sdp"-->
+<!--    app:mcv_showOtherDates="defaults"-->
+
+
+<!--    app:mcv_weekDayTextAppearance="@style/CustomTextStyleCalender"-->
+<!--    -->
+<!--    app:mcv_tileHeight="@dimen/_32sdp"-->
+<!--    app:mcv_arrowColor="@color/black"-->
+
+
+    <!--
+    app:mcv_headerTextAppearance="@style/CustomTextStyleCalender"-->
+
+
+
+
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcv_events"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+
+</LinearLayout>
+
+</layout>

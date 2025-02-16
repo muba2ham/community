@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="red">#FF0000</color>
+
+    <color name="colorcalender">#C8F8805A</color>
+
+<!--    <color name="colorcalender">#f53d3d</color>-->
+
+
+<!--    <color name="primary">#488aff</color>-->
+    <color name="primary">#2E366A</color>
+    <color name="secondary">#32db64</color>
+    <color name="danger">#f53d3d</color>
+    <color name="light">#f4f4f4</color>
+    <color name="dark">#222</color>
+    <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">@color/light</color>
+
+    <color name="app_editext_black">#222428</color>
+</resources>

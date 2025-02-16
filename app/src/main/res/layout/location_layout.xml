@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_25sdp"
+        />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:alpha="0.7"
+        android:background="@color/light" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcv_locations"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_300sdp"/>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:alpha="0.7"
+        android:background="@color/light" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+           android:layout_weight="1"
+            android:gravity="center">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.8"
+             android:backgroundTint="@color/danger"
+            android:padding="@dimen/_5sdp"
+            android:text="Cancel"
+            android:textAllCaps="false"
+            android:textColor="@color/light"
+            android:textSize="@dimen/_11ssp"
+            app:cornerRadius="@dimen/_25sdp" />
+
+<!--            android:onClick="@{()-> loginViewModel.onLoginClicked()}"-->
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnOkay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.8"
+              android:backgroundTint="@color/danger"
+
+            android:padding="@dimen/_5sdp"
+            android:text="Ok"
+            android:textAllCaps="false"
+            android:textColor="@color/light"
+            android:textSize="@dimen/_11ssp"
+            app:cornerRadius="@dimen/_25sdp" />
+
+<!--            android:onClick="@{()-> loginViewModel.onLoginClicked()}"-->
+
+        <!--                        android:drawableRight="@drawable/baseline_arrow_right_24"-->
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--    <RadioButton-->
+<!--        android:id="@+id/list"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content" />-->
+</LinearLayout>
+
+</layout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+          <variable
+            name="imageUrl"
+            type="String" />
+
+    </data>
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:id="@+id/splashConstarint"
+   >
+
+
+<!--    <ImageView-->
+<!--        android:layout_width="@dimen/_130sdp"-->
+<!--        android:layout_height="@dimen/_130sdp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        android:src="@drawable/spalsh__final_logo"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"/>-->
+
+
+    <ImageView
+
+        android:id="@+id/splash_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/splash"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+<!--    android:src="@drawable/splash_logo_with_name_light"-->
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

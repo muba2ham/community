@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <data>
+
+        <variable
+            name="loginViewModel"
+            type="community.io.com.viewmodel.EventViewModel" />
+
+    </data>
+
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+
+        android:background="@color/white">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:maxLines="1"
+            android:maxEms="15"
+            android:text="View Event"
+            android:textAlignment="center"
+            android:textColor="@color/dark"
+            android:textSize="@dimen/_15sdp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:alpha="0.7"
+            android:background="@color/light" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="@dimen/_7sdp"
+            android:layout_marginRight="@dimen/_7sdp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_horizontal"
+            android:gravity="start|center_horizontal"
+            android:layout_weight="1"
+            android:padding="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:maxLines="1"
+            android:maxEms="15"
+            android:text="Event Name"
+            android:textAlignment="gravity"
+            android:textColor="@color/dark"
+            android:textSize="@dimen/_11sdp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/eventName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_horizontal"
+            android:gravity="start|center_horizontal"
+            android:layout_weight="1.5"
+            android:padding="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="View Event"
+            android:textAlignment="gravity"
+            android:textColor="@color/dark"
+            android:textSize="@dimen/_11sdp"
+            android:visibility="visible" />
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5sdp"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center_horizontal"
+                android:gravity="start|center_horizontal"
+                android:layout_weight="1"
+                android:padding="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:maxLines="1"
+                android:maxEms="15"
+                android:text="Description"
+                android:textAlignment="gravity"
+                android:textColor="@color/dark"
+                android:textSize="@dimen/_11sdp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/eventDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center_horizontal"
+                android:gravity="start|center_horizontal"
+                android:layout_weight="1.5"
+                android:padding="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="View Event"
+                android:textAlignment="gravity"
+                android:textColor="@color/dark"
+                android:textSize="@dimen/_11sdp"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5sdp"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center_horizontal"
+                android:gravity="start|center_horizontal"
+                android:layout_weight="1"
+                android:padding="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:maxLines="1"
+                android:maxEms="15"
+                android:text="Location"
+                android:textAlignment="gravity"
+                android:textColor="@color/dark"
+                android:textSize="@dimen/_11sdp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/eventLocation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center_horizontal"
+                android:gravity="start|center_horizontal"
+                android:layout_weight="1.5"
+                android:padding="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="View Event"
+                android:textAlignment="gravity"
+                android:textColor="@color/dark"
+                android:textSize="@dimen/_11sdp"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5sdp"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center_horizontal"
+                android:gravity="start|center_horizontal"
+                android:layout_weight="1"
+                android:padding="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:maxLines="1"
+                android:maxEms="15"
+                android:text="From"
+                android:textAlignment="gravity"
+                android:textColor="@color/dark"
+                android:textSize="@dimen/_11sdp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/eventFrom"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center_horizontal"
+                android:gravity="start|center_horizontal"
+                android:layout_weight="1.5"
+                android:padding="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="View Event"
+                android:textAlignment="gravity"
+                android:textColor="@color/dark"
+                android:textSize="@dimen/_11sdp"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5sdp"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center_horizontal"
+                android:gravity="start|center_horizontal"
+                android:layout_weight="1"
+                android:padding="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:maxLines="1"
+                android:maxEms="15"
+                android:text="To"
+                android:textAlignment="gravity"
+                android:textColor="@color/dark"
+                android:textSize="@dimen/_11sdp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/eventTo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center_horizontal"
+                android:gravity="start|center_horizontal"
+                android:layout_weight="1.5"
+                android:padding="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="View Event"
+                android:textAlignment="gravity"
+                android:textColor="@color/dark"
+                android:textSize="@dimen/_11sdp"
+                android:visibility="visible" />
+        </LinearLayout>
+        </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5sdp"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center">
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnDone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.8"
+                    android:backgroundTint="@color/danger"
+                    android:padding="@dimen/_5sdp"
+                    android:text="Ok"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_11ssp"
+                    app:cornerRadius="@dimen/_25sdp" />
+
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</layout>

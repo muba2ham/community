@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background shape -->
+
+    <!-- Arrow shape -->
+<!--    <item android:bottom="8dp" android:right="8dp">-->
+<!--        <shape>-->
+<!--            <solid android:color="#000000" /> &lt;!&ndash; black color for the arrow &ndash;&gt;-->
+<!--            <corners android:radius="8dp" /> &lt;!&ndash; rounded corners &ndash;&gt;-->
+<!--            <size android:width="16dp" android:height="16dp" /> &lt;!&ndash; adjust width and height as needed &ndash;&gt;-->
+<!--        </shape>-->
+<!--    </item>-->
+
+
+    <item>
+        <shape>
+            <solid android:color="@android:color/transparent"/>
+            <size android:width="2dp" android:height="50dp"/>
+        </shape>
+    </item>
+
+    <item android:bottom="20dp">
+        <rotate
+            android:fromDegrees="-45"
+            android:toDegrees="45">
+            <shape android:shape="rectangle">
+                <solid android:color="@android:color/black"/>
+                <corners
+                    android:radius="1dp"
+                    android:bottomRightRadius="0dp"
+                    android:bottomLeftRadius="0dp"/>
+            </shape>
+        </rotate>
+    </item>
+
+    <item android:top="20dp">
+        <rotate
+            android:fromDegrees="45"
+            android:toDegrees="45">
+            <shape android:shape="rectangle">
+                <solid android:color="@android:color/black"/>
+                <corners
+                    android:radius="1dp"
+                    android:topRightRadius="0dp"
+                    android:topLeftRadius="0dp"/>
+            </shape>
+        </rotate>
+    </item>
+
+
+</layer-list>
